@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1 target-densitydpi=device-dpi" />
+		<title>KAS</title>
+		
+		<link type="text/css" href="css/reset.css" rel="stylesheet" />
+		<link type="text/css" href="css/windows.css" rel="stylesheet" />
+		
+		<script type="text/javascript" src="js/lib/jquery/jquery.js"></script>
+		<script type="text/javascript" src="js/lib/fastclick.js"></script>
+		
+		<style>
+			video {
+				display: block; position: absolute;
+				width: 320px; height: 568px;
+				top: 0px; left: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<video id="videoPlayer" width="640" height="1136" autoplay webkit-playsinline>
+  			<source src="video/tutorial.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+		
+		<!-- JAVASCRIPT FILES -->
+		<script type="text/javascript" src="phonegap.js"></script>
+		<script type="text/javascript">
+			FastClick.attach(document.body);
+				
+			window.addEventListener('load', function(){
+				document.ontouchstart = function(e){ 
+					e.preventDefault(); 
+				}
+				
+				$('#videoPlayer').bind('ended', function () {
+    				window.location.href = "level/lead0.html";
+				});
+				
+				$('#videoPlayer').click(function() {
+					window.location.href = "level/lead0.html";	
+				});
+			}, false)
+		</script>
+				
+	</body>
+</html>

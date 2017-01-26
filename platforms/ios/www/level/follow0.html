@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1 target-densitydpi=device-dpi" />
+		<title>KAS</title>
+		<link type="text/css" href="../css/reset.css" rel="stylesheet" />
+		<link type="text/css" href="../css/design.css" rel="stylesheet" />
+		<link type="text/css" href="../css/school.css" rel="stylesheet" />
+		
+		<script type="text/javascript" src="../js/lib/jquery/jquery.js"></script>
+		<script type="text/javascript" src="../js/lib/fastclick.js"></script>
+	</head>
+	<body>
+	
+		<div id="statsMeter">
+			<p id="timeMeter">00:00:00</p>
+		</div>
+	
+		<div id="playWindow">
+		
+			<div id="playField">
+				<div id="startGround"></div>
+			
+				<div id="player"></div>
+				<div id="kikker"></div>
+				
+				<div id="sideKikker"></div>
+				
+				<div id="targetPreview"></div>
+				
+				
+				<div id="endGround"></div>
+				
+				<div id="shadow"></div>
+			</div>
+		
+		</div>
+		
+		<!-- AFSCHERM -->
+		<div id="afScherm">
+			<div id="afBg"></div>
+			<div onclick="window.location.href='../menu.html';" id="AFhoofdmenuKiezen"></div>
+			<div onclick="window.location.href='../menu.html';" id="AFlevelKiezen"></div>
+			<div onclick="location.reload(false)" id="replay"></div>
+		</div>
+		
+		<!-- EINDSCHERM -->
+		<div id="endScherm">
+			<div id="endBg"></div>
+			<div onclick="window.location.href='../menu.html';" id="ENDhoofdmenuKiezen"></div>
+			<div onclick="window.location.href='../menu.html';" id="ENDlevelKiezen"></div>
+			<div onclick="window.location.href='../menu.html';" id="nextLevel"></div>
+		</div>
+		
+		<!-- AUDIO FILES -->
+		<audio id="bgm_moeras" src="../audio/music/frog_music_school.mp3" loop></audio>
+		<audio id="eff_jump" src="/audio/frog/jump.mp3"></audio>
+		<audio id="eff_fall" src="/audio/frog/fall.mp3"></audio>
+		
+		<!-- JAVASCRIPT FILES -->
+		<script type="text/javascript" src="../phonegap.js"></script>
+		<script type="text/javascript" src="../js/lead.js"></script>
+		<script type="text/javascript">
+			FastClick.attach(document.body);
+			
+			$( document ).ready(function() {
+				console.log( "Document is ready. Setting game variables." );
+				// Game variables
+				jumpMultiplier = 1.75;		// The maximum distance of a single jump. Default is 2.
+				maxJump = 120;				// The maximum range of a single jump. Default (120) is two lelies.
+				difficulty = 80;			// The speed with wich the shadow moves. Higher number equals higher difficulty.
+			});
+		</script>
+		
+	</body>
+</html>

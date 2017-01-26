@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1 target-densitydpi=device-dpi" />
+		<title>KAS</title>
+		
+		<link type="text/css" href="css/reset.css" rel="stylesheet" />
+		<link type="text/css" href="css/windows.css" rel="stylesheet" />
+		
+		<script type="text/javascript" src="js/lib/jquery/jquery.js"></script>
+		<script type="text/javascript" src="js/lib/fastclick.js"></script>
+	</head>
+	<body>
+		
+		<!-- Startscherm -->
+		<div id="startScherm" class="window">
+			<div onclick="showWindow('hoofdmenuScherm');" id="speelButton"></div>
+			<div id="titelKas"></div>
+			<div id="kasStartscherm"></div>
+			<div id="vliegStartscherm"></div>
+			<div onclick="showWindow('missieScherm');" id="leaderboardButton"></div>
+			<div id="settingsButton"></div>
+		</div>
+		<!-- Einde startscherm -->
+		
+		<!-- Hoofdmenu -->
+		<div id="hoofdmenuScherm" class="window">
+			<div onclick="showWindow('startScherm');" id="terugButton"></div>
+			<div class="aantalVliegen"><p> 367 </p></div>
+			<div onclick="showWindow('levelScherm');" id="hoofdmenuBg">
+				<div id="wereldImage"><p>WERELD 1</p></div>
+			</div>
+
+			<div id="pageDots">
+				<a onclick="showWindow('missieScherm');"><div id="otherDot1"></div>
+				<div class="currentDot"></div>
+				<div id="otherDot2"></div>
+				<div id="otherDot3"></div>
+				<div id="otherDot4"></div></a>
+			</div>
+		</div>
+		<!-- Einde hoofdmenu -->
+		
+		<!-- Level selectie -->
+		<div id="levelScherm" class="window">
+			<div onclick="showWindow('hoofdmenuScherm');" id="terugButton"></div>
+			<div class="aantalVliegen"><p> 367 </p></div>
+			<div id="levelBg">			
+				<ul>
+					<li onclick="window.location.href='tutorial.html';" class="levelVoltooid3"></li>
+					<li onclick="window.location.href='level/follow0.html';" class="levelVoltooid3"></li>
+					<li onclick="window.location.href='level/lead1.html';" class="levelVoltooid3"></li>
+					<li onclick="window.location.href='level/follow1.html';" class="levelVoltooid3"></li>
+					<li onclick="window.location.href='level/lead2.html';" class="levelVoltooid2"></li>
+					<li onclick="window.location.href='level/follow2.html';" class="levelVoltooid2"></li>
+					<li onclick="window.location.href='level/lead3.html';" class="levelVoltooid1"></li>
+					<li onclick="window.location.href='level/follow3.html';" class="levelVoltooid0"></li>
+					<li onclick="window.location.href='level/lead4.html';" class="levelVoltooid0"></li>
+					<li onclick="window.location.href='level/follow4.html';" class="levelVoltooid0"></li>
+					<li onclick="window.location.href='level/lead5.html';" class="levelVoltooid0"></li>
+					<li onclick="window.location.href='level/follow5.html';" class="levelVoltooid0"></li>
+				</ul>
+			</div>
+		</div>
+		<!-- Einde level selectie -->
+		
+		<!-- Missie scherm -->
+		<div id="missieScherm" class="window">
+			<div onclick="showWindow('hoofdmenuScherm');" id="terugButton"></div>
+			<div class="aantalVliegen"><p> 367 </p></div>
+			<div id="missieBg"><div id="missieBeloning"><p> Ontvang 100 <br/> vliegen extra </p></div>
+				<div id="missie1">
+					<p> Haal level 1 <br/> in 25 seconden. </p>
+					<div class="checkBoxMissie"></div>
+				</div>
+				<div id="missie2">
+					<p> Haal 43 vliegen <br/> in één level. </p>
+					<div class="checkBoxMissie"></div>
+				</div>
+				<div id="missie3">
+					<p> Haal level 3 <br/> zonder PU. </p>
+					<div class="checkBoxMissie">
+						<div class="checkBoxMissieChecked"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Einde missie scherm -->
+		
+		<!-- AUDIO FILES -->
+		<audio id="bgm_menu" src="audio/music/frog_music_menu.mp3" loop></audio>
+		<audio id="bgm_click" src="audio/menu/pwop.mp3"></audio>
+		
+		<!-- JAVASCRIPT FILES -->
+		<script type="text/javascript" src="phonegap.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+			FastClick.attach(document.body);
+			
+			function showWindow(windowID){
+				$('.window').css('display', 'none');
+				$('#' + windowID).css('display', 'block');
+				$('#bgm_click').get(0).play();
+			}
+		</script>
+				
+	</body>
+</html>

@@ -1,0 +1,30 @@
+#playWindow #playField #sideKikker {
+	display: block; position: absolute; z-index: 99;
+	width: 100px; height: 100px;
+	top: auto;
+	left: 240px; margin-left: -50px;
+	bottom: 100px; margin-top: -50px;
+	background-image: url(../img/sideKikker.png); background-repeat: no-repeat;
+	background-position: center center; background-size: 63px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	
+	-webkit-transition-property: bottom, left, background-size, -webkit-transform;
+	-webkit-transition-duration: .500s, .500s, .250s, .250s;
+	-webkit-transition-timing-function: ease-out, ease-out, ease-in-out, ease-in-out;
+	-webkit-transition-delay: .250s, .250s, .250s, .0s;
+}
+
+#playWindow #playField .step {
+	display: block; position: absolute; z-index: 50;
+	width: 100px; height: 100px; margin-left: -50px; margin-bottom: -50px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+	background-image: url(../img/lelieGewoon.png);
+	background-position: center center; background-repeat: no-repeat; background-size: contain;
+	opacity: 0.0;
+	
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: .250s;
+	-webkit-transition-timing-function: ease-out;
+}

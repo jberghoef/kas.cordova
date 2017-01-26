@@ -1,0 +1,277 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@font-face {
+    font-family: 'bangersregular';
+    src: url('fonts/bangers-webfont.eot');
+    src: url('fonts/bangers-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/bangers-webfont.woff') format('woff'),
+         url('fonts/bangers-webfont.ttf') format('truetype'),
+         url('fonts/bangers-webfont.svg#bangersregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'burned_gothicroman';
+    src: url('fonts/burned_gothic-webfont.eot');
+    src: url('fonts/burned_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/burned_gothic-webfont.woff') format('woff'),
+         url('fonts/burned_gothic-webfont.ttf') format('truetype'),
+         url('fonts/burned_gothic-webfont.svg#burned_gothicroman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	-webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+	display: block; position: absolute;
+	width: 100%; height: 100%;
+	background-color: black;
+}
+
+*{ font-family: 'burned_gothicroman'; }
+
+#statsMeter {
+	display: block; box-sizing: border-box; position: absolute; z-index: 500;
+	width: 100%; height: 35px;
+	left: 0px; top: 0px;
+	margin: 0px; padding: 7px 2px 2px 2px;
+}
+
+	#statsMeter #timeMeter {
+		color: white; text-align: center;
+		margin: 0px; padding: 0px;
+		text-shadow: 0px 0px 1px #000;
+	}
+	
+	#reset {
+		display: block; z-index: 999;
+		position: fixed;
+		top: 2px; left: 5px;
+		color: #ccc; text-decoration: none;
+		font-size: 12px;
+	}
+
+#playWindow {
+	display: block; position: absolute; box-sizing: border-box;
+	width: 320px; height: 568px;
+	bottom: 0px; left: 0px;
+	padding: 0px; margin: 0px;
+	overflow-x: hidden; overflow-y: scroll;
+}
+
+	#playWindow #playField {
+		display: block; position: absolute;
+		width: 100%; height: 3000px; /* 2272 */
+		left: 0px; bottom: 0px; z-index: 40;
+		overflow: hidden;
+		background-color: rgba(114,198,205,1);
+		background-image: url(../img/bgSlice.png); background-repeat: repeat-y; background-size: contain;
+		
+		-webkit-transition-property: bottom;
+		-webkit-transition-duration: .500s;
+		-webkit-transition-timing-function: ease-out;
+	}
+	
+		#playWindow #playField #player {
+			display: block; position: absolute; z-index: 100;
+			width: 30px; height: 30px;
+			left: 160px; margin-left: -15px;
+			top: 2920px; margin-top: -12px;
+			-webkit-border-radius: 20px;
+			border-radius: 20px;
+			
+			-webkit-transition-property: top, left, background-size;
+			-webkit-transition-duration: .500s, .500s, .250s;
+			-webkit-transition-timing-function: ease-out;
+		}
+		
+		#playWindow #playField #kikker {
+			display: block; position: absolute; z-index: 101;
+			width: 130px; height: 130px;
+			left: 160px; margin-left: -65px;
+			top: 2920px; margin-top: -65px;
+			background-image: url(../img/player.png); background-repeat: no-repeat;
+			background-position: center center; background-size: 73px;
+			-webkit-border-radius: 75px;
+			border-radius: 75px;
+			
+			-webkit-transition-property: top, left, background-size;
+			-webkit-transition-duration: .500s, .500s, .250s;
+			-webkit-transition-timing-function: ease-out;
+		}
+		
+		#playWindow #playField #sideKikker {
+			display: block; position: absolute; z-index: 99;
+			width: 100px; height: 100px;
+			left: 240px; margin-left: -50px;
+			top: 2930px; margin-top: -50px;
+			background-image: url(../img/sideKikker.png); background-repeat: no-repeat;
+			background-position: center center; background-size: 63px;
+			-webkit-border-radius: 50px;
+			border-radius: 50px;
+			
+			-webkit-transition-property: top, left, background-size, -webkit-transform;
+			-webkit-transition-duration: .500s, .500s, .250s, .250s;
+			-webkit-transition-timing-function: ease-out, ease-out, ease-in-out, ease-in-out;
+			-webkit-transition-delay: .250s, .250s, .250s, .0s;
+		}
+		
+		#playWindow #playField #targetPreview {
+			display: block; position: absolute; z-index: 75;
+			width: 20px; height: 20px;
+			left: 160px; margin-left: -12px;
+			top: 2920px; margin-top: -10px;
+			background-color: rgba(255,0,0,0.25); border: 2px solid rgba(255,0,0,0.50);
+			opacity: 0.0;
+			
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+			
+			-webkit-transition-property: opacity;
+			-webkit-transition-timing-function: linear;
+			-webkit-transition-delay: .200s;
+			-webkit-transition-duration: .100s;
+		}
+		
+		#playWindow #playField #startGround {
+			display: block; position: absolute; z-index: 51;
+			width: 100%; height: 186px;
+			left: 0px; bottom: 0px;
+			background-image: url(../img/startBorder.png); background-position: left center; background-repeat: no-repeat;
+		}
+		
+		#playWindow #playField #endGround {
+			display: block; position: absolute; z-index: 51;
+			width: 100%; height: 108px;
+			left: 0px; top: 0px;
+			background-color: rgba(43,158,64,1);
+			background-image: url(../img/endBorder.png); background-position: center bottom; background-repeat: repeat-x; background-size: 10px;
+		}
+		
+		#playWindow #playField .step {
+			display: block; position: absolute; z-index: 50;
+			width: 100px; height: 100px; margin-left: -50px; margin-bottom: -50px;
+			-webkit-border-radius: 100px;
+			border-radius: 100px;
+			background-image: url(../img/lelieGewoon.png);
+			background-position: center center; background-repeat: no-repeat; background-size: contain;
+		}
+
+		#playWindow #playField .small {
+			background-image: url(../img/lelieBloem.png);
+		}
+			
+			#playWindow #playField .left { left: 25%; }
+			#playWindow #playField .middle { left: 50%; }
+			#playWindow #playField .right { left: 75%; }
+
+		#shadow {
+			display: block; position: absolute; z-index: 250;
+			width: 100%; height: 100%;
+			left: 0px; top: 4000px;
+			background-color: rgba(0,0,0,0.50);
+			-webkit-box-shadow: 0 0 100px 0 rgba(0,0,0,0.75);
+			box-shadow: 0 0 100px 0 rgba(0,0,0,0.75);
+			
+			-webkit-transition-property: top;
+			-webkit-transition-timing-function: linear;
+			-webkit-transition-delay: 1s;
+		}
+
+/* Afscherm
+================================================== */
+
+#afScherm {
+	display: none; position: absolute;
+	bottom: 0px; left: 0px; z-index: 998;
+	height: 568px; width: 320px;
+	background-size: 320px 568px;
+	background-color: rgba(0,0,0,0.8);
+}
+
+#afBg {
+	width: 289px; height: 264px;
+	z-index: 999;
+	position: absolute;
+	top: 150px; left: 15px;
+	background-image: url(../img/windows/AFSCHERM_Achtergrond.png);
+	background-size: 289px 264px;
+}
+
+#replay {
+	width: 72.5px; height: 73px;
+	z-index: 999;
+	position: absolute;
+	top: 302px; left: 122px;
+	background-image: url(../img/windows/AFSCHERM_Replay.png) ;
+	background-size: 72.5px 73px;
+}
+
+#AFhoofdmenuKiezen {
+	width: 57.5px; height: 58px;
+	z-index: 999;
+	position: absolute;
+	top: 310px; left: 80px;
+	background-image: url(../img/windows/PAUZE_Hoofdmenu.png) ;
+	background-size: 57.5px 58px;
+}
+
+#AFlevelKiezen {
+	width: 57.5px; height: 58px;
+	z-index: 999;
+	position: absolute;
+	top: 310px; left: 180px;
+	background-image: url(../img/windows/PAUZE_Levels.png) ;
+	background-size: 57.5px 58px;
+}
+
+/*ENDSCHERM =================================================*/
+
+#endScherm {
+	display: none; position: absolute;
+	bottom: 0px; left: 0px; z-index: 998;
+	height: 568px; width: 320px;
+	background-size: 320px 568px;
+	background-color: rgba(0,0,0,0.8);
+}
+
+#endBg {
+	width: 289px; height: 264px;
+	z-index: 999;
+	position: absolute;
+	top: 150px; left: 15px;
+	background-image: url(../img/windows/END_AchtergrondLead.png);
+	background-size: 289px 264px;
+}
+
+#nextLevel {
+	width: 72.5px; height: 73px;
+	z-index: 999;
+	position: absolute;
+	top: 302px; left: 122px;
+	background-image: url(../img/windows/END_Play.png) ;
+	background-size: 72.5px 73px;
+}
+
+#ENDhoofdmenuKiezen {
+	width: 57.5px; height: 58px;
+	z-index: 999;
+	position: absolute;
+	top: 310px; left: 80px;
+	background-image: url(../img/windows/END_Hoofdmenu.png) ;
+	background-size: 57.5px 58px;
+}
+
+#ENDlevelKiezen {
+	width: 57.5px; height: 58px;
+	z-index: 999;
+	position: absolute;
+	top: 310px; left: 180px;
+	background-image: url(../img/windows/END_Levels.png) ;
+	background-size: 57.5px 58px;	
+}

@@ -1,0 +1,391 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+
+body {
+	-webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    display: block; position: absolute;
+	width: 100%; height: 100%;
+	background-color: black;
+}
+
+/* Startscherm
+================================================== */
+
+#startScherm {
+    width: 320px; height: 568px;
+    background-image: url(../img/windows/STARTSCHERM_Achtergrond.png);
+    background-size: 320px 568px;
+}
+
+#titelKas {
+    position: absolute;
+    top: 150px; left: 52px;
+    width: 213px; height: 102px;
+    z-index: 20;
+    background-image: url(../img/windows/STARTSCHERM_Titel.png); background-repeat: no-repeat;
+    background-size: 213px 102px;
+}
+
+#speelButton {
+    position: absolute;
+    top: 395px; left: 14px;
+    width: 294px; height: 68px;
+    z-index: 20;
+    background-image: url(../img/windows/STARTSCHERM_Spelen.png);
+    background-size: 294px 68px;
+}
+
+#kasStartscherm {
+    position: absolute;
+    top: 409px; left: 0px;
+    width: 172.5px; height: 159.5px;
+    z-index: 20;
+    background-image: url(../img/windows/STARTSCHERM_Kas.png);
+    background-size: 172.5px 159.5px;
+}
+
+#vliegStartscherm {
+    position: absolute;
+    top: 60px; left: 158px;
+    width: 172.5px; height: 121px;
+    z-index: 20;
+    background-image: url(../img/windows/STARTSCHERM_Vlieg.png);
+    background-size: 172.5px 121px;
+	
+	-webkit-animation-name: Flymation;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-play-state: running;
+}
+
+	@-webkit-keyframes Flymation {
+	0%   {top: 60px; left: 158px;}
+	10%  {top: 50px; left: 148px;}
+	20%  {top: 60px; left: 158px;}
+	30%  {top: 70px; left: 168px;}
+	40%  {top: 60px; left: 178px;}
+	50%  {top: 50px; left: 168px;}
+	60%  {top: 40px; left: 158px;}
+	70%  {top: 50px; left: 148px;}
+	80%  {top: 60px; left: 158px;}
+	90%  {top: 70px; left: 168px;}
+	100% {top: 60px; left: 158px;}
+	}
+
+#leaderboardButton {
+    position: absolute;
+    top: 490px; left: 185px;
+    width: 52.5px; height: 52.5px;
+    z-index: 20;
+    background-image: url(../img/windows/STARTSCHERM_Leaderboard.png);
+    background-size: 52.5px 52.5px;
+}
+
+#settingsButton {
+    position: absolute;
+    top: 490px; left: 250px;
+    width: 52.5px; height: 52.5px;
+    z-index: 20;
+    background-image: url(../img/windows/STARTSCHERM_Settings.png);
+    background-size: 52.5px 52.5px;
+}
+
+/* Pauze scherm
+================================================== */
+
+#pauzeScherm {
+    display: none;
+    width: 320px; height: 568px;
+    /*background-image: url(../img/PAUZE_Mockup.png);*/
+    background-size: 320px 568px;
+}
+
+#pauzeBg {
+    position: absolute;
+    top: 180px; left: 7.5px;
+    width: 305px; height: 200px;
+    z-index: 20;
+    background-image: url(../img/windows/PAUZE_Achtergrond.png);
+    background-size: 305px 200px;
+}
+
+#speelDoor {
+    position: absolute;
+    top: 70px; left: 115px;
+    width: 72.5px; height: 73px;
+    z-index: 20;
+    background-image: url(../img/windows/PAUZE_Play.png);
+    background-size: 72.5px 73px;
+}
+
+#hoofdmenuKiezen {
+    position: absolute;
+    top: 78px; left: 75px;
+    width: 57.5px; height: 58px;
+    z-index: 20;
+    background-image: url(../img/windows/PAUZE_Hoofdmenu.png);
+    background-size: 57.5px 58px;
+}
+
+#levelKiezen {
+    position: absolute;
+    top: 78px; left: 170px;
+    width: 57.5px; height: 58px;
+    z-index: 20;
+    background-image: url(../img/windows/PAUZE_Levels.png);
+    background-size: 57.5px 58px;
+}
+
+/* Missie scherm
+================================================== */
+
+#missieScherm {
+    display: none;
+    width: 320px; height: 568px;
+    background-image: url(../img/windows/MISSIE_Achtergrond.png);
+    background-size: 320px 568px;
+}
+
+#missieBg {
+    position: absolute;
+    top: 120px; left: 7.5px;
+    width: 305px; height: 377.5px;
+    z-index: 1;
+    background-image: url(../img/windows/MISSIE_Achtergrond2.png);
+    background-size: 305px 377.5px;
+}
+
+#terugButton {
+    position: absolute;
+    top: 20px; left: 20px;
+    width: 62.5px; height: 52.5px;
+    z-index: 20;
+    background-image: url(../img/windows/MISSIE_TerugButton.png);
+    background-size: 62.5px 52.5px;
+}
+
+.aantalVliegen {
+    position: absolute;
+    top: 25px; left: 140px;
+    width: 155px; height: 40px;
+    z-index: 20;
+    background-image: url(../img/windows/MISSIE_AantalVliegen.png);
+    background-size: 155px 40px;
+}
+
+    .aantalVliegen p {
+        position: absolute;
+        top: -2px; left: 72px;
+        color: white;
+        font-family: helvetica
+    }
+
+#missieBeloning {
+    position: absolute;
+    top: 90px; left: 70px;
+    width: 180px; height: 50px;
+    color: black;
+    font-size: 1.3em;
+    font-family: helvetica
+}
+
+#missie1 {
+    position: absolute;
+    top: 160px; left: 60px;
+    width: 180px; height: 50px;
+    color: black;
+    font-size: 1.0em;
+    font-family: helvetica
+}
+
+#missie2 {
+    position: absolute;
+    top: 215px; left: 60px;
+    width: 180px; height: 50px;
+    color: black;
+    font-size: 1.0em;
+    font-family: helvetica
+}
+
+#missie3 {
+    position: absolute;
+    top: 270px; left: 60px;
+    width: 180px; height: 50px;
+    color: black;
+    font-size: 1.0em;
+    font-family: helvetica
+}
+
+.checkBoxMissie {
+    position: absolute;
+    top: 10px; left: 135px;
+    width: 48px; height: 48px;
+    z-index: 20;
+    background-image: url(../img/windows/MISSIE_VinkButton.png);
+    background-size: 48px 48px;
+}
+
+.checkBoxMissieChecked {
+    position: absolute;
+    top: -5px; left: 10px;
+    width: 46px; height: 42px;
+    z-index: 20;
+    background-image: url(../img/windows/MISSIE_CheckSign.png);
+    background-size: 46px 42px;
+}
+
+/* Hoofdmenu
+================================================== */
+
+#hoofdmenuScherm {
+    display: none;
+    width: 320px; height: 568px;
+    background-image: url(../img/windows/HOOFDMENU_Achtergrond.png);
+    background-size: 320px 568px;
+}
+
+#hoofdmenuBg {
+    position: absolute;
+    top: 160px; left: 32.5px;
+    width: 255px; height: 275px;
+    z-index: 1;
+    background-image: url(../img/windows/HOOFDMENU_Achtergrond2.png);
+    background-size: 255px 275px;
+}
+
+#terugButton {
+    position: absolute;
+    top: 20px; left: 20px;
+    width: 62.5px; height: 52.5px;
+    z-index: 20;
+    background-image: url(../img/windows/HOOFDMENU_TerugButton.png);
+    background-size: 62.5px 52.5px;
+}
+
+#pageDots {
+    position: absolute;
+    top: 450px; left: 90px;
+    width: 100px; width: 140px; height: 25px
+}
+
+.currentDot {
+    position: absolute;
+    top: 0px; left: 40px;
+    width: 17.5px; height: 17.5px;
+    z-index: 20;
+    background-image: url(../img/windows/HOOFDMENU_RoundYes.png);
+    background-size: 17.5px 17.5px;
+}
+
+#otherDot1 {
+    position: absolute;
+    top: 0px; left: 20px;
+    width: 17.5px; height: 17.5px;
+    z-index: 20;
+    background-image: url(../img/windows/HOOFDMENU_RoundNo.png);
+    background-size: 17.5px 17.5px;
+}
+
+#otherDot2 {
+    position: absolute;
+    top: 0px; left: 60px;
+    width: 17.5px; height: 17.5px;
+    z-index: 20;
+    background-image: url(../img/windows/HOOFDMENU_RoundNo.png);
+    background-size: 17.5px 17.5px;
+}
+
+#otherDot3 {
+    position: absolute;
+    top: 0px; left: 80px;
+    width: 17.5px; height: 17.5px;
+    z-index: 20;
+    background-image: url(../img/windows/HOOFDMENU_RoundNo.png);
+    background-size: 17.5px 17.5px;
+}
+
+#otherDot4 {
+    position: absolute;
+    top: 0px; left: 100px;
+    width: 17.5px; height: 17.5px;
+    z-index: 20;
+    background-image: url(../img/windows/HOOFDMENU_RoundNo.png);
+    background-size: 17.5px 17.5px;
+}
+
+#wereldImage {
+    top: 60px; left: 50px;
+    width: 150px; height: 150px
+}
+
+    #wereldImage p {
+        position: absolute;
+        top: 105px; left: 90px;
+        color: white;
+        font-family: helvetica
+    }
+
+/* Level scherm
+================================================== */
+
+#levelScherm {
+    display: none;
+    width: 320px; height: 568px;
+    background-image: url(../img/windows/LEVEL_Achtergrond.png);
+    background-size: 320px 568px;
+}
+
+#levelBg {
+    position: absolute;
+    top: 140px; left: 10px;
+    width: 300px; height: 337.5px;
+    z-index: 1;
+    background-image: url(../img/windows/LEVEL_Achtergrond2.png);
+    background-size: 300px 337.5px;
+}
+
+    #levelBg ul {
+        position: absolute;
+        top: 0px; left: -15px;
+        width: 250px;
+        list-style: none
+    }
+
+        #levelBg ul li {
+            display: inline-block;
+            margin-bottom: 5px; margin-left: 10px
+        }
+
+.levelVoltooid3 {
+    width: 70px; height: 70px;
+    z-index: 1;
+    background-image: url(../img/windows/LEVEL_Voltooid3.png);
+    background-size: 70px 70px;
+}
+
+.levelVoltooid2 {
+    width: 70px; height: 70px;
+    z-index: 1;
+    background-image: url(../img/windows/LEVEL_Voltooid2.png);
+    background-size: 70px 70px;
+}
+
+.levelVoltooid1 {
+    width: 70px; height: 70px;
+    z-index: 1;
+    background-image: url(../img/windows/LEVEL_Voltooid1.png);
+    background-size: 70px 70px;
+}
+
+.levelVoltooid0 {
+    width: 70px; height: 70px;
+    z-index: 1;
+    background-image: url(../img/windows/LEVEL_Voltooid0.png);
+    background-size: 70px 70px;
+}
